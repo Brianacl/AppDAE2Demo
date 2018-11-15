@@ -36,5 +36,47 @@ namespace AppDAE2Demo.Areas.General.Controllers
                 throw;
             }
         }//Fin ViCatEdificiosList
+
+        public IActionResult Edificiosdetalle(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+             List < Eva_cat_edificios > listaEdificios = srvCatEdificiosList
+                    .getListCatEdificios().Result;
+
+            var edificio = listaEdificios.Find(x => x.IdEdificio == id);
+
+            if (edificio == null)
+            {
+                return NotFound();
+            }
+
+            return View(edificio);
+        }//Fin de detalle
+
+        public IActionResult Edificioedit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            List<Eva_cat_edificios> listaEdificios = srvCatEdificiosList
+                   .getListCatEdificios().Result;
+
+            var edificio = listaEdificios.Find(x => x.IdEdificio == id);
+
+            if (edificio == null)
+            {
+                return NotFound();
+            }
+
+            return View(edificio);
+        }//Fin de detalle
+
+
     }
 }

@@ -85,9 +85,9 @@
                 @Html.DisplayFor(modelItem => item.Borrado)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Editar", "Edificioedit", new { id = item.IdEdificio }) |
+                @Html.ActionLink("Detalle", "Edificiosdetalle", new { id=item.IdEdificio }) |
+                @Html.ActionLink("Eliminar", "Edificiodelete", new { id = item.IdEdificio })
             </td>
         </tr>
 }

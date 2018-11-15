@@ -15,4 +15,13 @@
     <Folder Include="Areas\Seguridad\Views\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Areas\General\Views\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\General\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>

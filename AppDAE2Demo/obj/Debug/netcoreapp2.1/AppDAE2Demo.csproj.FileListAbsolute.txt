@@ -32,3 +32,6 @@ C:\NETCore\AppDAE2Demo\AppDAE2Demo\obj\Debug\netcoreapp2.1\AppDAE2Demo.pdb
 C:\NETCore\AppDAE2Demo\AppDAE2Demo\obj\Debug\netcoreapp2.1\AppDAE2Demo.csproj.CopyComplete
 C:\NETCore\AppDAE2Demo\AppDAE2Demo\obj\Debug\netcoreapp2.1\Razor\Areas\General\Views\CatEdificios\Edificiosdetalle.g.cshtml.cs
 C:\NETCore\AppDAE2Demo\AppDAE2Demo\obj\Debug\netcoreapp2.1\Razor\Areas\General\Views\CatEdificios\Edificioslist.g.cshtml.cs
+C:\NETCore\AppDAE2Demo\AppDAE2Demo\obj\Debug\netcoreapp2.1\Razor\Areas\General\Views\_ViewImports.g.cshtml.cs
+C:\NETCore\AppDAE2Demo\AppDAE2Demo\obj\Debug\netcoreapp2.1\Razor\Areas\General\Views\_ViewStart.g.cshtml.cs
+C:\NETCore\AppDAE2Demo\AppDAE2Demo\obj\Debug\netcoreapp2.1\Razor\Areas\General\Views\CatEdificios\Edificioedit.g.cshtml.cs
