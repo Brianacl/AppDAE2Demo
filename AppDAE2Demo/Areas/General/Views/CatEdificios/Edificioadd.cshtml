@@ -1,16 +1,15 @@
 ﻿@model AppDAE2Demo.Models.Eva_cat_edificios
 
 @{
-    ViewData["Title"] = "Edificioedit";
+    ViewData["Title"] = "Edificioadd";
 }
 
-<h2>EDITAR ESTE EDIFICIO</h2>
+<h2>AGREGAR NUEVO EDIFICIO</h2>
 
-<h4>Eva_cat_edificios</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edificioedit" method="post">
+        <form asp-action="Edificioadd" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="IdEdificio" class="control-label"></label>
@@ -68,7 +67,7 @@
                 <span asp-validation-for="Borrado" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Guardar"  class="btn btn-default"/>
+                <input type="submit" value="Crear edificio" class="btn btn-default" />
             </div>
         </form>
     </div>

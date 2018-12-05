@@ -27,15 +27,27 @@ namespace AppDAE2Demo.Areas.General.Controllers
                 ViewBag.Title = "Catalogo de edificios";
                 return View(listaEdificios);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine(e.Message);
                 if (e.InnerException != null) {
-                    System.Diagnostics.Debug.WriteLine("{0}",e.InnerException);
+                    System.Diagnostics.Debug.WriteLine("{0}", e.InnerException);
                 }
                 throw;
             }
         }//Fin ViCatEdificiosList
+
+        public ActionResult Edificioadd()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Edificioadd(Eva_cat_edificios edificioNuevo)
+        {
+            srvCatEdificiosList.postEdificio(edificioNuevo).Wait();
+            return RedirectToAction("Edificioslist");
+        }
 
         public IActionResult Edificiosdetalle(int? id)
         {
@@ -44,10 +56,8 @@ namespace AppDAE2Demo.Areas.General.Controllers
                 return NotFound();
             }
 
-             List < Eva_cat_edificios > listaEdificios = srvCatEdificiosList
-                    .getListCatEdificios().Result;
-
-            var edificio = listaEdificios.Find(x => x.IdEdificio == id);
+            Eva_cat_edificios edificio = srvCatEdificiosList
+                    .getEdificio(id).Result;
 
             if (edificio == null)
             {
@@ -64,10 +74,8 @@ namespace AppDAE2Demo.Areas.General.Controllers
                 return NotFound();
             }
 
-            List<Eva_cat_edificios> listaEdificios = srvCatEdificiosList
-                   .getListCatEdificios().Result;
-
-            var edificio = listaEdificios.Find(x => x.IdEdificio == id);
+            Eva_cat_edificios edificio = srvCatEdificiosList
+                   .getEdificio(id).Result;
 
             if (edificio == null)
             {
@@ -75,8 +83,27 @@ namespace AppDAE2Demo.Areas.General.Controllers
             }
 
             return View(edificio);
-        }//Fin de detalle
+        }//Fin de edit
 
+        [HttpPost]
+        public ActionResult Edificioedit(Eva_cat_edificios edificio)
+        {
+            System.Diagnostics.Debug.WriteLine(edificio.DesEdificio);
+            srvCatEdificiosList.putEdificio(edificio);
 
+            return RedirectToAction("Edificioslist");
+        }
+
+        public ActionResult Edificiodelete(int ? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            srvCatEdificiosList.deleteEdificio(id).Wait();
+
+            return RedirectToAction("Edificioslist");
+        }
     }
 }

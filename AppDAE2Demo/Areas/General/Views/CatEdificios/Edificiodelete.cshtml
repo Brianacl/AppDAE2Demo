@@ -1,11 +1,12 @@
 ﻿@model AppDAE2Demo.Models.Eva_cat_edificios
 
 @{
-    ViewData["Title"] = "ViCatEdificiosDetalle";
+    ViewData["Title"] = "Edificiodelete";
 }
 
-<h2>DETALLE DEL EDIFICIO</h2>
+<h2>ELIMINAR EDIFICIO</h2>
 
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Eva_cat_edificios</h4>
     <hr />
@@ -77,8 +78,9 @@
             @Html.DisplayFor(model => model.Borrado)
         </dd>
     </dl>
-</div>
-<div>
-    @Html.ActionLink("Editar", "Edificioedit", new { id = Model.IdEdificio }) |
-    <a asp-action="Edificioslist">Regresar a la lista</a>
+    
+    <form asp-action="Edificiodelete" method="delete">
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-action="Edificioslist">Regresar a la lista</a>
+    </form>
 </div>

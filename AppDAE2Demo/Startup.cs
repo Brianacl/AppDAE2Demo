@@ -63,6 +63,19 @@ namespace AppDAE2Demo
                   template: "{area:exists}/{controller=CatEdificios}/{action=Edificiosdetalle}/{id?}");
 
                 routes.MapRoute(
+                 name: "areaGeneralEliminar",
+                 template: "{area:exists}/{controller=CatEdificios}/{action=Edificiodelete}/{id?}");
+
+                routes.MapRoute(
+                 name: "areaGeneralAgregar",
+                 template: "{area:exists}/{controller=CatEdificios}/{action=Edificioadd}/{id?}");
+
+                routes.MapRoute(
+                 name: "areaGeneralEditar",
+                 template: "{area:exists}/{controller=CatEdificios}/{action=Edificioedit}/{id?}");
+
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
